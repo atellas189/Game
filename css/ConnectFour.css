@@ -1,0 +1,14 @@
+.board_square {
+    border: 1px solid #555555;
+    height: 36px;
+    width: 36px;
+}
+
+.piece {
+    height: 32px;
+    width: 32px;
+    display:block;
+    border-radius: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
