@@ -1,0 +1,41 @@
+@font-face{
+    font-family: 'Bold';
+    src: url(../Game/Montserrat.ttf);
+}
+
+html{
+    background: linear-gradient(55deg, yellow, orange, orangered, rgb(230, 22, 22), yellow)
+}
+#restart{
+    font-size: 200%;
+}
+#color{
+    font-size: 200%;
+}
+h1{
+    text-align: center;
+    font-family: 'Bold';
+    text-decoration: underline;
+    font-size: 250%;
+
+}
+.div{
+    margin-left: 350px;
+    margin-right: 300px;
+}
+table{
+    width: 40em;
+    height: 40em;
+    background-color: blue;
+    border: blue 8px double;
+    margin-left: 0;
+    margin-right: 4em;
+}
+td{
+    background-color: white;
+    border: blue 4px solid;
+    border-radius: 50%;
+}
+td:hover{
+    background-color: rgba(137, 206, 230, 0.808);
+}
