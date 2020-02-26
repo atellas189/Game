@@ -16,6 +16,17 @@
     <br>
     <br>
     <div id="gameboard">
+        <table id="dropdown">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
         <table id="game_table">
 
             <script>
@@ -25,7 +36,7 @@
                             document.writeln("<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")' onhover='hover("+col+")'></td>");							
                         }
                         document.writeln("</tr>");	
-                    }						
+                    }	
             </script>
         </table>
     </div>
