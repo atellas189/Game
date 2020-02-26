@@ -31,7 +31,12 @@ td{
     border: blue 4px solid;
     border-radius: 50%;
 }
-td:hover{
+.player0:hover {
     background-color: rgba(137, 206, 230, 0.808);
 }
-
+.player1 {
+    background-color: red;
+}
+.player2 {
+    background-color: yellow;
+}
