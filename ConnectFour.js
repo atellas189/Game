@@ -108,8 +108,8 @@ function checkForWin() {
 }
 function endGame(winner) {
     game_active = false; //set the "game_active" to false, so that it can be started again.
-    document.getElementById("player").innerHTML = "Player"+winner+" wins";
-    if(winner==1) {
+    document.getElementById("player").innerHTML = "Player"+winner+" wins"; //Displays who wins
+    if(winner==1) { //Adds a point to the scoreboard for who won
         player1_score++;
         document.getElementById("redPlayer").innerHTML = player1_score;
     } else if(winner==2) {
@@ -119,6 +119,7 @@ function endGame(winner) {
 }
 
 function showTurn() {
+    //Displays who is the current player
     if(game_active==true) {
         document.getElementById("player").innerHTML = "Now Player: Player"+[active_player];
     }
@@ -128,12 +129,15 @@ function turn(col) {
     for(row=5;row>=0;row--) {
         if(gameboard[row][col] == 0) {
             gameboard[row][col] = active_player;
+            //Drops down the piece into the most bottom row
             drawBoard();
+            //Switches players turn
             if(active_player == 1) {
                 active_player = 2;
             } else if(active_player == 2) {
                 active_player = 1;
             }
+            //Displays whos turn it is
             showTurn();
             return true
         }
