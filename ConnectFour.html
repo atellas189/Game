@@ -8,10 +8,12 @@
 <body onload="startGame()">
     <h1> Connect Four</h1>
     <div class="button">
-        <button id="restart">New game</button>
+        <button id="restart" onclick="startGame()">New game</button>
     </div>
-    <br>
-    <br>
+    <div id="player"></div>
+    <div class="scoreboard">
+        <span id="redPlayer">0</span>:<span id="yellowPlayer">0</span>
+    </div>
     <br>
     <br>
     <br>
