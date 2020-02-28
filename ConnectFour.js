@@ -112,6 +112,10 @@ function endGame(winner) {
     if(winner==1) { //Adds a point to the scoreboard for who won
         player1_score++;
         document.getElementById("redPlayer").innerHTML = player1_score;
+        var gif = document.createElement("img")
+        gif.src = "win.gif"
+        winner2.appendChild(img)
+        
     } else if(winner==2) {
         player2_score++;
         document.getElementById("yellowPlayer").innerHTML = player2_score;
@@ -143,4 +147,6 @@ function turn(col) {
         }
     }
 }
+
+// Andrew's js
 

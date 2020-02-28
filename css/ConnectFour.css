@@ -97,9 +97,13 @@ col:hover::after{
 
 }
 
-img {
-    width: 30%;
+.yellowdude {
+    width: 28%;
     float:left;
+}
+.reddude {
+    width: 28%;
+    float: right;
 }
 #gameboard:after {
     content: "";
