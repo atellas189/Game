@@ -24,28 +24,20 @@
         <img class="reddude" src="pics/redude2.png">
     </div>
     <div id="gameboard">
-        <table id="dropdown">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        
+        <br>
+        <br>
+        <br>
+        <br>
         <table id="game_table">
 
             <script>
                 for (var row=0; row<=5; row++) {
                         document.writeln("<tr>");	
                         for (var col=0; col<=6; col++) {
-                            document.writeln("<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")' onhover='hover("+col+")'></td>");							
+                            document.writeln("<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")' </td>");							
                         }
-                        document.writeln("</tr>");	
-                    }	
+                        document.writeln("</tr>");
+                    }
             </script>
         </table>
     </div>

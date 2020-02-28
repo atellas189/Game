@@ -35,7 +35,7 @@ function drawBoard() {
     checkForWin();
     for (col = 0; col<=6; col++) {
         for (row=0; row<=5; row++) {
-            document.getElementById('square_'+row+'_'+col).outerHTML ="<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")' onhover='hover("+col+")'></td>";
+            document.getElementById('square_'+row+'_'+col).outerHTML ="<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")'</td>";
         }	
     }
 
