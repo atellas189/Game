@@ -5,7 +5,9 @@ var player_color = [];
 var player1_score = 0;
 var player2_score = 0;
 player_color[1] = "red"; 
-player_color[2] = "yellow"; 
+player_color[2] = "yellow";
+var gif = document.createElement("img");
+gif.src = "pics/win.gif"
 
 for (row=0; row<=5; row++) {
 	gameboard[row] = [];
@@ -17,7 +19,6 @@ for (row=0; row<=5; row++) {
 function startGame() {
     if(game_active == true) return false;
     game_active=true;
-
     //If there are any pieces on the board, they are cleared
     for (row=0; row<=5; row++) {
         gameboard[row] = [];
@@ -27,15 +28,29 @@ function startGame() {
     }
 
     active_player = Math.floor(Math.random()*2)+1;
+    if(active_player==2){
+        document.getElementById("reddudesmall").style.visibility ="hidden";
+        document.getElementById("yellowdudesmall").style.visibility="visible";
+    } else if(active_player==1){
+        document.getElementById("reddudesmall").style.visibility ="visible";
+        document.getElementById("yellowdudesmall").style.visibility="hidden";
+    }
     showTurn();
     drawBoard();
+    if(player1_score > 0) {
+        document.getElementById("winnergifRed").removeChild(gif)
+    }
+    if(player2_score > 0) {
+        document.getElementById("winnergifYellow").removeChild(gif)
+    }
 }
 function drawBoard() {
     if(game_active == false) return
     checkForWin();
+    
     for (col = 0; col<=6; col++) {
         for (row=0; row<=5; row++) {
-            document.getElementById('square_'+row+'_'+col).outerHTML ="<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")'</td>";
+            document.getElementById('square_'+row+'_'+col).outerHTML ="<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")' onmouseover='hoverOver("+col+")'</td>";
         }	
     }
 
@@ -108,24 +123,25 @@ function checkForWin() {
 }
 function endGame(winner) {
     game_active = false; //set the "game_active" to false, so that it can be started again.
-    document.getElementById("player").innerHTML = "Player"+winner+" wins"; //Displays who wins
     if(winner==1) { //Adds a point to the scoreboard for who won
         player1_score++;
         document.getElementById("redPlayer").innerHTML = player1_score;
-        var gif = document.createElement("img")
-        gif.src = "win.gif"
-        winner2.appendChild(img)
-        
+        document.getElementById("player").innerHTML = "<span id='player"+[winner]+"'>Player"+winner+" wins"; //Displays who wins
+        document.getElementById("winnergifRed").appendChild(gif);
+        gif.style.width = "100%"
     } else if(winner==2) {
         player2_score++;
         document.getElementById("yellowPlayer").innerHTML = player2_score;
+        document.getElementById("player").innerHTML = "<span id='player"+[winner]+"'>Player"+winner+" wins"; //Displays who wins
+        document.getElementById("winnergifYellow").appendChild(gif);
+        gif.style.width = "100%"
     }
 }
 
 function showTurn() {
     //Displays who is the current player
     if(game_active==true) {
-        document.getElementById("player").innerHTML = "Now Player: Player"+[active_player];
+        document.getElementById("player").innerHTML = "Now Player: <span id='player"+[active_player]+"'>Player"+[active_player];
     }
 }
 
@@ -138,8 +154,12 @@ function turn(col) {
             //Switches players turn
             if(active_player == 1) {
                 active_player = 2;
+                document.getElementById("reddudesmall").style.visibility ="hidden";
+                document.getElementById("yellowdudesmall").style.visibility="visible";
             } else if(active_player == 2) {
                 active_player = 1;
+                document.getElementById("reddudesmall").style.visibility ="visible";
+                document.getElementById("yellowdudesmall").style.visibility="hidden";
             }
             //Displays whos turn it is
             showTurn();
@@ -148,5 +168,6 @@ function turn(col) {
     }
 }
 
+function hoverOver(col) {}
 // Andrew's js
 

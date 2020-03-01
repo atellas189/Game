@@ -9,39 +9,37 @@
     <header class="h1">
         <h1> Connect Four</h1>
     </header>
+    <div class="scoreboard">
+        <img src="pics/yellowdude.png" id="yellowdudesmall" width="25%"><span id="yellowPlayer">0</span>:<span id="redPlayer">0</span><img src="pics/redude2.png" id="reddudesmall" width="25%">
+    </div>
     <div class="button">
         <button id="restart" onclick="startGame()">New game</button>
     </div>
     <div id="player"></div>
-    <div class="scoreboard">
-        <span id="redPlayer">0</span>:<span id="yellowPlayer">0</span>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div id="winner2">
-        <img class="yellowdude"src="pics/yellowdude.png">
-        <img class="reddude" src="pics/redude2.png">
-    </div>
-    <div id="gameboard">
-        <br>
-        <br>
-        <br>
-        <br>
-        <table id="game_table">
-
-            <script>
-                for (var row=0; row<=5; row++) {
-                        document.writeln("<tr>");	
-                        for (var col=0; col<=6; col++) {
-                            document.writeln("<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")' </td>");							
+    <div class="mainsection">
+        <div id="yellowwinner">
+            <img class="yellowdude"src="pics/yellowdude.png">
+        </div>
+        <div id="gameboard">
+            <table id="game_table">
+    
+                <script>
+                    for (var row=0; row<=5; row++) {
+                            document.writeln("<tr>");	
+                            for (var col=0; col<=6; col++) {
+                                document.writeln("<td id='square_" + row + "_"+ col +"' class='board_square player"+gameboard[row][col]+"' onclick='turn("+col+")' onmouseover='hoverOver("+col+")'</td>");							
+                            }
+                            document.writeln("</tr>");
                         }
-                        document.writeln("</tr>");
-                    }
-            </script>
-        </table>
+                </script>
+            </table>
+        </div>
+        <div id="redwinner">
+            <img class="reddude" src="pics/redude2.png">
+        </div>
+        <div id="winnergifYellow"></div>
+        <div id="winnergifRed"></div>
     </div>
-
 </body>
 </html>
         
