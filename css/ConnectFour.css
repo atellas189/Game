@@ -145,24 +145,31 @@ col:hover::after{
     right: 5%;
     width: 192px;
 }
-/* Animation */
+/* Animation 2x */
 .yellowwinner {
     position: relative;
     animation-name: hop;
-    animation-duration: 1s;
+    animation-duration: 1.2s;
     animation-iteration-count:infinite;
     animation-timing-function: linear;
 }
 .redwinner {
     position: relative;
     animation-name: hop;
-    animation-duration: 1s;
+    animation-duration: 1.2s;
     animation-iteration-count:infinite;
     animation-timing-function: linear;
 }
 @keyframes hop {
     0%   {bottom:0px;}
-    30%  {bottom:10px;}
-    60%  {bottom:10px;}
+    10%  {bottom:10px;}
+    20%  {bottom:10px;}
+    30%  {bottom:0px;}
+    40%  {bottom:10px;}
+    50%  {bottom:10px;}
+    60%  {bottom:0px;}
+    70%  {bottom:10px;}
+    80%  {bottom:10px;}
+    90%  {bottom:0px;}
     100% {bottom:0px;}
 }
