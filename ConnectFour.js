@@ -186,6 +186,4 @@ function turn(col) {
     }
 }
 
-function hoverOver(col) {}
-// Andrew's js
 
