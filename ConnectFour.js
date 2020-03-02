@@ -7,7 +7,9 @@ var player2_score = 0;
 player_color[1] = "red"; 
 player_color[2] = "yellow";
 var gif = document.createElement("img");
-gif.src = "pics/win.gif"
+gif.src = "pics/win.gif";
+var count1 = 0;
+var count2 = 0;
 
 for (row=0; row<=5; row++) {
 	gameboard[row] = [];
@@ -37,11 +39,15 @@ function startGame() {
     }
     showTurn();
     drawBoard();
-    if(player1_score > 0) {
-        document.getElementById("winnergifRed").removeChild(gif)
+    if(count1==1) {
+        document.getElementById("winnergifRed").removeChild(gif);
+        document.getElementById("redwinner").removeAttribute("class");
+        count1--
     }
-    if(player2_score > 0) {
-        document.getElementById("winnergifYellow").removeChild(gif)
+    if(count2==1) {
+        document.getElementById("winnergifYellow").removeChild(gif);
+        document.getElementById("yellowwinner").removeAttribute("class");
+        count2--
     }
 }
 function drawBoard() {
@@ -134,6 +140,7 @@ function endGame(winner) {
         var attribute1 = document.createAttribute("class");
         attribute1.value = "redwinner";
         jump1.setAttributeNode(attribute1);
+        count1++
     } else if(winner==2) {
         player2_score++;
         document.getElementById("yellowPlayer").innerHTML = player2_score;
@@ -145,6 +152,7 @@ function endGame(winner) {
         var attribute2 = document.createAttribute("class");
         attribute2.value = "yellowwinner";
         jump2.setAttributeNode(attribute2);
+        count2++
     }
 }
 

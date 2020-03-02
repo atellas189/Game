@@ -121,6 +121,12 @@ col:hover::after{
     visibility: visible;
 }
 
+.yellowdude {
+    width: 100%;
+}
+.reddude {
+    width: 100%;
+}
 
 #gameboard:after {
     content: "";
