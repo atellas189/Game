@@ -128,13 +128,23 @@ function endGame(winner) {
         document.getElementById("redPlayer").innerHTML = player1_score;
         document.getElementById("player").innerHTML = "<span id='player"+[winner]+"'>Player"+winner+" wins"; //Displays who wins
         document.getElementById("winnergifRed").appendChild(gif);
-        gif.style.width = "100%"
+        gif.style.width = "100%";
+
+        var jump1 = document.getElementById("redwinner");
+        var attribute1 = document.createAttribute("class");
+        attribute1.value = "redwinner";
+        jump1.setAttributeNode(attribute1);
     } else if(winner==2) {
         player2_score++;
         document.getElementById("yellowPlayer").innerHTML = player2_score;
         document.getElementById("player").innerHTML = "<span id='player"+[winner]+"'>Player"+winner+" wins"; //Displays who wins
         document.getElementById("winnergifYellow").appendChild(gif);
-        gif.style.width = "100%"
+        gif.style.width = "100%";
+
+        var jump2 = document.getElementById("yellowwinner");
+        var attribute2 = document.createAttribute("class");
+        attribute2.value = "yellowwinner";
+        jump2.setAttributeNode(attribute2);
     }
 }
 

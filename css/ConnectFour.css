@@ -121,12 +121,7 @@ col:hover::after{
     visibility: visible;
 }
 
-.yellowdude {
-    width: 100%;
-}
-.reddude {
-    width: 100%;
-}
+
 #gameboard:after {
     content: "";
     display: table;
@@ -143,4 +138,25 @@ col:hover::after{
     top: 10%;
     right: 5%;
     width: 192px;
+}
+/* Animation */
+.yellowwinner {
+    position: relative;
+    animation-name: hop;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+    animation-timing-function: linear;
+}
+.redwinner {
+    position: relative;
+    animation-name: hop;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+    animation-timing-function: linear;
+}
+@keyframes hop {
+    0%   {bottom:0px;}
+    30%  {bottom:10px;}
+    60%  {bottom:10px;}
+    100% {bottom:0px;}
 }
